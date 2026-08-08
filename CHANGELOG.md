@@ -2,6 +2,24 @@
 
 All notable public changes are recorded here. Dates use ISO 8601.
 
+## [0.3.0] — 2026-08-07
+
+### Added
+
+- A cross-domain fictional casebook with two religion-and-belief cases plus mental-health support, national-security decision support, dangerous machinery, Antarctica, the high Arctic, an orbital station, a lunar habitat, and a crewed Mars mission.
+- Domain-specific roles, decision-cycle walkthroughs, boundaries, pause conditions, measures, counter-metrics, artifacts, and non-substitution disclaimers.
+- Public reference points for human rights, health governance, hazardous-energy control, AI risk management, public defense policy, Antarctic contingency planning, and spaceflight oversight.
+
+### Changed
+
+- Expanded the public site and repository navigation from one worked example to a multi-domain case library.
+- Clarified that remote conditions, communications delay, urgency, and mission pressure do not expand AI authority.
+
+### Safeguard impact
+
+- Added explicit prohibitions against religious profiling, automated diagnosis or coercive crisis action, autonomous force authorization, replacement of engineered interlocks, and AI-only mission or life-support decisions.
+- No existing safeguard was removed or weakened.
+
 ## [0.2.0] — 2026-08-07
 
 ### Added

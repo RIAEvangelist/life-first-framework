@@ -1,4 +1,4 @@
-# Life First Framework v0.2
+# Life First Framework v0.3
 
 Status: public working draft
 Scope: consequential AI design, deployment, operation, and retirement
@@ -123,4 +123,4 @@ Self-attestation MUST NOT imply independent certification. A statement expires w
 
 ## 10. Companion documents
 
-Operational details live in the [decision protocol](docs/DECISION_PROTOCOL.md), [implementation guide](docs/IMPLEMENTATION_GUIDE.md), [governance model](docs/GOVERNANCE.md), [pilot plan](docs/PILOT_PLAN.md), [measurement guide](docs/METRICS.md), and [threat model](docs/THREAT_MODEL.md).
+Operational details live in the [decision protocol](docs/DECISION_PROTOCOL.md), [implementation guide](docs/IMPLEMENTATION_GUIDE.md), [governance model](docs/GOVERNANCE.md), [pilot plan](docs/PILOT_PLAN.md), [measurement guide](docs/METRICS.md), and [threat model](docs/THREAT_MODEL.md). The [fictional casebook](examples/README.md) demonstrates how the same requirements change across community, spiritual, clinical-support, security, industrial, polar, and space settings without replacing domain authority.

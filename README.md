@@ -1,6 +1,6 @@
 # Life First Framework
 
-**Public working draft · v0.2**
+**Public working draft · v0.3**
 
 Life First is an open, practical framework for consequential AI work. It helps teams protect life and dignity, preserve agency, make proportionate decisions, assign accountable humans, and learn visibly from mistakes.
 
@@ -17,7 +17,7 @@ It is designed for product teams, public-interest technologists, community organ
 - [Governance](docs/GOVERNANCE.md) — repository governance and deployment accountability.
 - [Threat model](docs/THREAT_MODEL.md) — foreseeable misuse, failure modes, and control expectations.
 - [Toolkit](templates/README.md) — reusable intake, evidence, decision, appeal, incident, metric, and change templates.
-- [Worked example](examples/community-resource-referral/README.md) — a fictional walkthrough using synthetic data.
+- [Casebook](examples/README.md) — fictional walkthroughs spanning community services, religion, mental health, national security, dangerous machinery, polar operations, and crewed space missions.
 
 ## The operating cycle
 

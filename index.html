@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Life First Framework v0.2: practical governance, decision protocols, controls, metrics, and templates for consequential AI work.">
+    <meta name="description" content="Life First Framework v0.3: practical governance, decision protocols, controls, templates, and fictional cross-domain case studies for consequential AI work.">
     <meta name="theme-color" content="#155e49">
     <link rel="canonical" href="https://riaevangelist.github.io/life-first-framework/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Life First Framework">
-    <meta property="og:description" content="A practical framework for consequential AI work centered on life, dignity, agency, and accountable stewardship.">
+    <meta property="og:description" content="A practical framework and fictional casebook for consequential AI work centered on life, dignity, agency, and accountable stewardship.">
     <meta property="og:url" content="https://riaevangelist.github.io/life-first-framework/">
     <meta name="twitter:card" content="summary">
-    <title>Life First Framework &mdash; v0.2</title>
+    <title>Life First Framework &mdash; v0.3</title>
     <style>
       :root {
         color-scheme: light;
@@ -412,6 +412,31 @@
       .doc-link span { margin-top: 0.4rem; color: var(--muted); }
       .doc-link b { margin-top: auto; color: var(--forest); }
 
+      .casebook {
+        background: linear-gradient(180deg, rgba(220, 232, 222, 0.55), rgba(247, 244, 236, 0));
+      }
+      .case-card { min-height: 11.5rem; }
+      .case-tag {
+        width: fit-content;
+        margin-bottom: 0.75rem;
+        padding: 0.2rem 0.55rem;
+        color: var(--forest-deep) !important;
+        background: var(--amber-soft);
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .case-note {
+        margin-top: 1.4rem;
+        padding: 1rem 1.2rem;
+        color: #31483d;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+      }
+
       .provenance-box {
         padding: clamp(1.5rem, 5vw, 3rem);
         display: grid;
@@ -503,11 +528,12 @@
           <span class="brand-mark" aria-hidden="true"></span>
           <span>Life First</span>
         </a>
-        <span class="version">Public draft &middot; v0.2</span>
+        <span class="version">Public draft &middot; v0.3</span>
         <nav aria-label="Primary navigation">
           <a href="#commitments">Commitments</a>
           <a href="#cycle">Decision loop</a>
           <a href="#safeguards">Safeguards</a>
+          <a href="#casebook">Casebook</a>
           <a href="#toolkit">Toolkit</a>
           <a class="source-link" href="https://github.com/RIAEvangelist/life-first-framework">GitHub source</a>
         </nav>
@@ -670,8 +696,32 @@
             <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/GOVERNANCE.md"><strong>Governance</strong><span>Repository decisions, deployment roles, exceptions, appeals, and transparency.</span><b>Govern &rarr;</b></a>
             <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/THREAT_MODEL.md"><strong>Threat model</strong><span>Technical, operational, institutional, and adversarial failure modes.</span><b>Review &rarr;</b></a>
             <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/templates"><strong>Reusable templates</strong><span>Intake, impact, evidence, decisions, controls, pilots, metrics, appeals, incidents, and changes.</span><b>Copy &rarr;</b></a>
-            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/community-resource-referral"><strong>Worked example</strong><span>A fictional Tier 2 community-resource referral walkthrough and JSON record.</span><b>Explore &rarr;</b></a>
+            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples"><strong>Cross-domain casebook</strong><span>Fictional tabletop examples spanning human services, belief, health, security, machinery, polar operations, and space.</span><b>Explore &rarr;</b></a>
           </div>
+        </div>
+      </section>
+
+      <section class="section casebook" id="casebook">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="eyebrow">Fictional casebook</p>
+            <h2>Test the same commitments where the stakes change.</h2>
+            <p>Each synthetic scenario applies the seven-step cycle, names accountable roles, and makes its stop conditions visible. The examples are tabletop aids, not domain operating procedures.</p>
+          </div>
+          <div class="doc-grid">
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/community-resource-referral"><span class="case-tag">Community</span><strong>Resource referral</strong><span>Advisory support without deciding eligibility or removing a person's choice.</span><b>Tier 2 &rarr;</b></a>
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/religious-community-support"><span class="case-tag">Religion &amp; belief</span><strong>Pluralistic community support</strong><span>Logistics without profiling belief, ranking doctrine, or coercing participation.</span><b>Tier 2 &rarr;</b></a>
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/sacred-gathering-safety"><span class="case-tag">Religion &amp; belief</span><strong>Sacred-gathering safety</strong><span>Crowd, weather, and accessibility readiness without belief profiling, targeting, or force tasking.</span><b>Tier 3 &rarr;</b></a>
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/mental-health-crisis-support"><span class="case-tag">Mental health</span><strong>Remote support handoff</strong><span>Qualified human care remains authoritative; the assistant neither diagnoses nor initiates coercive action.</span><b>Tier 3 &rarr;</b></a>
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/national-security-watchfloor"><span class="case-tag">National security</span><strong>Watchfloor decision support</strong><span>Deliberately abstract analysis support with no targeting, force authorization, or rights deprivation.</span><b>Tier 3 &rarr;</b></a>
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/hazardous-machinery"><span class="case-tag">Machinery</span><strong>Hazardous maintenance support</strong><span>AI assistance stays separate from engineered interlocks, safe-state controls, and qualified authority.</span><b>Tier 3 &rarr;</b></a>
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/antarctic-research-station"><span class="case-tag">Antarctica</span><strong>Remote-station resupply</strong><span>Life, rescue capacity, and environmental protection outrank schedule pressure.</span><b>Tier 3 &rarr;</b></a>
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/arctic-field-expedition"><span class="case-tag">High Arctic</span><strong>Field expedition</strong><span>Local stop authority remains clear when weather, shelter, communications, and recovery are uncertain.</span><b>Tier 3 &rarr;</b></a>
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/space-station-life-support"><span class="case-tag">Orbital station</span><strong>Life-support advisory</strong><span>Independent controls and crew authority remain primary during a fictional environmental anomaly.</span><b>Tier 3 &rarr;</b></a>
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/lunar-habitat"><span class="case-tag">Moon</span><strong>Habitat power allocation</strong><span>Survival loads, crew agency, and repair margin stay protected under resource constraints.</span><b>Tier 3 &rarr;</b></a>
+            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/mars-mission"><span class="case-tag">Mars</span><strong>Launch and transit readiness</strong><span>An irreversible mission phase requires corroborated evidence and independent go/no-go authority.</span><b>Tier 3 &rarr;</b></a>
+          </div>
+          <p class="case-note"><strong>Boundary:</strong> none of these examples authorizes an AI system to decide theology, diagnose or treat a person, authorize force, override an engineered safeguard, command a vehicle, or approve a mission phase.</p>
         </div>
       </section>
 
@@ -708,7 +758,7 @@
 
     <footer>
       <div class="wrap footer-inner">
-        <span>Life First Framework &middot; Public working draft v0.2</span>
+        <span>Life First Framework &middot; Public working draft v0.3</span>
         <span><a href="https://github.com/RIAEvangelist/life-first-framework">Repository</a> &middot; <a href="https://github.com/RIAEvangelist/life-first-framework/blob/main/LICENSE">MIT License</a> &middot; <a href="https://github.com/RIAEvangelist/life-first-framework/blob/main/CHANGELOG.md">Changelog</a></span>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 # Provenance and Attribution
 
-Release boundary reviewed for v0.2 on 2026-08-07.
+Release boundary reviewed for v0.3 on 2026-08-07.
 
 ## Project origin
 
@@ -33,8 +33,10 @@ Lumina expressly offered two lines for reuse, credited here as requested:
 - Third-party material may be added only when its creator, provenance, reuse terms, and required attribution are recorded.
 - Acknowledgment of influence does not imply endorsement, co-authorship, sponsorship, or affiliation.
 
+The v0.3 casebook links to public reference points from the United Nations, World Health Organization, NIST, OSHA, the U.S. Department of Defense, Antarctic Treaty Secretariat, NASA, and United Nations Office for Outer Space Affairs. Those sources are linked for reviewer orientation and remain under their own terms. The case studies do not reproduce their operating procedures and do not imply approval by any referenced institution.
+
 ## License scope
 
 The repository's MIT License applies to original project files committed here. It does not relicense linked material, third-party names or marks, or content later contributed under separately stated terms.
 
-All normative v0.2 framework text, operational guidance, templates, schema, and fictional examples were written as original project material. Approved quotations remain confined to this provenance record.
+All normative v0.3 framework text, operational guidance, templates, schema, and fictional examples were written as original project material. Approved quotations remain confined to this provenance record.

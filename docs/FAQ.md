@@ -43,3 +43,7 @@ When intended benefit is not demonstrated, serious risk cannot be controlled, re
 ## May external frameworks be incorporated?
 
 Yes, when provenance and compatible reuse terms are verified. When a public source lacks clear reuse terms, link and attribute it rather than copying it.
+
+## Are the casebook examples operating instructions?
+
+No. They are fictional governance exercises using synthetic details. They do not replace religious leadership, clinical judgment, law, intelligence doctrine, engineering standards, emergency procedures, or mission rules. A real team must use current domain requirements and qualified authorities, then document how the Life First cycle fits around them.
