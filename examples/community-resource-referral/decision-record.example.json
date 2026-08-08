@@ -1,0 +1,140 @@
+{
+  "record_version": "1.0",
+  "decision_id": "CRR-PILOT-0042",
+  "created_at": "2026-08-07T15:00:00Z",
+  "system": {
+    "name": "Community Resource Referral Assistant",
+    "version": "0.2-pilot",
+    "workflow": "Optional shortlist of public community-resource categories for navigator review"
+  },
+  "risk_tier": 2,
+  "purpose": {
+    "legitimate_purpose": "Help a community navigator identify potentially relevant public resource categories from information voluntarily provided during the current session.",
+    "authority": "The community organization may provide informational referrals; it may not determine eligibility, enroll a person, or deny a service.",
+    "affected_people": [
+      "Person requesting a referral",
+      "Community navigator"
+    ],
+    "intended_benefit": "Reduce time spent searching a public directory while preserving navigator review and the person's choice.",
+    "excluded_uses": [
+      "Eligibility determination",
+      "Automatic enrollment or denial",
+      "Risk scoring",
+      "Sharing session information with a provider without the person's choice"
+    ]
+  },
+  "evidence": [
+    {
+      "id": "E-01",
+      "claim": "The person asked for food and transportation resources in the current session.",
+      "classification": "observed",
+      "source": "Information voluntarily entered by the person in the current session",
+      "confidence": "verified",
+      "limitations": "Needs may be incomplete or may change.",
+      "corroboration": "Navigator confirms the request before using the shortlist."
+    },
+    {
+      "id": "E-02",
+      "claim": "The listed categories exist in the current public resource directory.",
+      "classification": "observed",
+      "source": "Versioned public directory snapshot dated 2026-08-01",
+      "confidence": "supported",
+      "limitations": "A category does not guarantee availability or eligibility.",
+      "corroboration": "Navigator opens the current provider page before sharing a referral."
+    }
+  ],
+  "uncertainty": [
+    "Current provider capacity is not known until the navigator checks the provider page.",
+    "The session may not capture accessibility, language, or scheduling needs."
+  ],
+  "options": [
+    {
+      "id": "O-01",
+      "description": "Use the existing public directory without AI assistance.",
+      "expected_benefit": "Established process with no model-generated shortlist.",
+      "foreseeable_harm": "Longer search time and possible omission due to directory complexity.",
+      "reversible": true,
+      "selected": false
+    },
+    {
+      "id": "O-02",
+      "description": "Generate a category shortlist for navigator review, show limitations, and let the person choose whether to receive referrals.",
+      "expected_benefit": "Faster navigation with qualified human verification and user choice.",
+      "foreseeable_harm": "A relevant category could be missed or an irrelevant category could burden the person.",
+      "reversible": true,
+      "selected": true
+    },
+    {
+      "id": "O-03",
+      "description": "Automatically select a provider and submit the person's information.",
+      "expected_benefit": "Fewer steps if every assumption is correct.",
+      "foreseeable_harm": "Loss of choice, privacy disclosure, incorrect referral, or implied eligibility.",
+      "reversible": false,
+      "selected": false
+    }
+  ],
+  "selected_action": "Provide a clearly labeled category shortlist to a trained navigator; require navigator verification and the person's affirmative choice before sharing any provider link.",
+  "data_minimization": {
+    "categories": [
+      "Current-session resource needs",
+      "Broad location supplied for directory filtering",
+      "Accessibility or language preference supplied for referral use"
+    ],
+    "retention": "Delete session content within 24 hours; retain only aggregate pilot metrics without session text.",
+    "access_roles": [
+      "Assigned community navigator",
+      "Pilot safety lead for access-controlled incident review"
+    ]
+  },
+  "review": {
+    "accountable_owner": "Fictional Pilot Program Manager",
+    "required_reviewers": [
+      "Community services domain reviewer",
+      "Privacy and accessibility reviewer"
+    ],
+    "status": "approved_with_conditions",
+    "reviewed_at": "2026-08-07T16:00:00Z",
+    "conditions": [
+      "No eligibility language",
+      "Navigator must verify current provider information",
+      "Human directory search remains available"
+    ]
+  },
+  "agency": {
+    "notice": "The interface states that AI suggests categories and that a human navigator verifies any referral.",
+    "human_alternative": "The person may ask the navigator to use the public directory without AI assistance.",
+    "correction": "The person may edit or withdraw session information before any referral is shared.",
+    "appeal": "A pilot supervisor reviews complaints and can correct the record or referral process.",
+    "accessible": true
+  },
+  "safeguards": [
+    "No automatic eligibility, enrollment, denial, or provider contact",
+    "Navigator verification before a provider link is shared",
+    "User choice and non-AI alternative",
+    "Session deletion within 24 hours",
+    "Immediate pause if private session content appears in aggregate reporting"
+  ],
+  "monitoring": [
+    {
+      "metric": "Navigator-verified relevant-category recall on reviewed synthetic and consented pilot cases",
+      "warning_threshold": "Below 90% in any weekly review",
+      "stop_threshold": "Below 80% or one missed urgent safety referral",
+      "owner": "Pilot safety lead"
+    },
+    {
+      "metric": "Availability of a human directory alternative",
+      "warning_threshold": "Any confirmed interface path where the alternative is unclear",
+      "stop_threshold": "Any confirmed case where the person cannot access the alternative",
+      "owner": "Human review and remedy owner"
+    }
+  ],
+  "authorization": {
+    "owner_decision": "approved_with_conditions",
+    "owner_name": "Fictional Pilot Program Manager",
+    "independent_approver": "Fictional Community Review Lead",
+    "authorized_at": "2026-08-07T16:30:00Z",
+    "expires_at": "2026-09-30T23:59:59Z"
+  },
+  "outcome": null,
+  "learning": null
+}

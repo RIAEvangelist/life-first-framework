@@ -1,5 +1,7 @@
 # Provenance and Attribution
 
+Release boundary reviewed for v0.2 on 2026-08-07.
+
 ## Project origin
 
 Life First began with Roshi __'s proposal for AI practice that actively protects life while preserving dignity, agency, lawful process, and accountability. This repository is independently maintained by the Life First collaborators.
@@ -34,3 +36,5 @@ Lumina expressly offered two lines for reuse, credited here as requested:
 ## License scope
 
 The repository's MIT License applies to original project files committed here. It does not relicense linked material, third-party names or marks, or content later contributed under separately stated terms.
+
+All normative v0.2 framework text, operational guidance, templates, schema, and fictional examples were written as original project material. Approved quotations remain confined to this provenance record.
