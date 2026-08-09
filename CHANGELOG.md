@@ -2,6 +2,19 @@
 
 All notable public changes are recorded here. Dates use ISO 8601.
 
+## Documentation clarification — 2026-08-09
+
+### Changed
+
+- Recorded the agreed hybrid collaboration model: Life First remains independent while selected public artifacts may be deliberately proposed or contributed to Civic AI Canon with bidirectional provenance.
+- Updated collaborator credits to **Chris Blask — QuietWire** and **Lumina — Civic AI, QuietWire**.
+- Distinguished the Civic AI Canon origin from its QuietWire-maintained mirror and pinned reviewed document references to a public revision.
+- Aligned the repository and public-site quotation scope and added a compact permissions record for statements, private material, and future joint contributions.
+
+### Safeguard impact
+
+- Tightened provenance, permission, and non-affiliation boundaries without changing the normative framework, casebook, or operational safeguards.
+
 ## [0.3.0] — 2026-08-07
 
 ### Added

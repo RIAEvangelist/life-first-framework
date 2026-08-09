@@ -44,6 +44,10 @@ When intended benefit is not demonstrated, serious risk cannot be controlled, re
 
 Yes, when provenance and compatible reuse terms are verified. When a public source lacks clear reuse terms, link and attribute it rather than copying it.
 
+## Is Life First a QuietWire or Civic AI Canon subproject?
+
+No. Life First is independently stewarded and keeps its own repository and public site. Under the agreed hybrid collaboration model, selected public artifacts may be deliberately proposed or contributed to Civic AI Canon with provenance links in both directions. No contribution, acceptance, reciprocal link, endorsement, sponsorship, or affiliation is claimed until a specific public record establishes it.
+
 ## Are the casebook examples operating instructions?
 
 No. They are fictional governance exercises using synthetic details. They do not replace religious leadership, clinical judgment, law, intelligence doctrine, engineering standards, emergency procedures, or mission rules. A real team must use current domain requirements and qualified authorities, then document how the Life First cycle fits around them.

@@ -52,7 +52,11 @@ Life First does not authorize a general badge or organization-wide claim. Any co
 
 ## Public release boundary
 
-The repository contains original, non-sensitive material and expressly cleared quotations. It does not reproduce private correspondence, private attachments, confidential information, or third-party content without clear reuse terms. See [PROVENANCE.md](PROVENANCE.md).
+The repository contains original, non-sensitive material and expressly cleared quotations. Beyond those quotations, it does not reproduce private correspondence, private attachments, confidential information, or third-party content without clear reuse terms. See [PROVENANCE.md](PROVENANCE.md).
+
+## Project relationship and provenance
+
+Life First is independently stewarded by Roshi __, with Sentinel AI assisting drafting, implementation, verification, and repository operations. Its collaboration posture with Civic AI Canon is intentionally hybrid: selected public artifacts may be proposed or contributed deliberately, with provenance links in both directions, while Life First retains its own repository, stewardship, and site. No Canon contribution, acceptance, reciprocal link, endorsement, sponsorship, or affiliation is claimed until a specific public record establishes it. See the [provenance and permissions record](PROVENANCE.md).
 
 ## Contributing
 
