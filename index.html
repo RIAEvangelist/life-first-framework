@@ -1,767 +1,116 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Life First Framework v0.3: practical governance, decision protocols, controls, templates, and fictional cross-domain case studies for consequential AI work.">
+    <meta name="description" content="Life First Framework v0.3: practical governance for consequential AI work centered on life, dignity, agency, and accountable human judgment.">
     <meta name="theme-color" content="#155e49">
+    <link rel="icon" type="image/svg+xml" href="assets/life-first-lantern-mark.svg?v=2">
+    <link rel="apple-touch-icon" href="assets/life-first-lantern-mark.svg?v=2">
     <link rel="canonical" href="https://riaevangelist.github.io/life-first-framework/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Life First Framework">
-    <meta property="og:description" content="A practical framework and fictional casebook for consequential AI work centered on life, dignity, agency, and accountable stewardship.">
+    <meta property="og:description" content="A practical framework for consequential AI work centered on life, dignity, agency, and accountable stewardship.">
     <meta property="og:url" content="https://riaevangelist.github.io/life-first-framework/">
-    <meta name="twitter:card" content="summary">
-    <title>Life First Framework &mdash; v0.3</title>
-    <style>
-      :root {
-        color-scheme: light;
-        --paper: #f7f4ec;
-        --surface: #fffdf8;
-        --surface-strong: #e7efe8;
-        --ink: #17251f;
-        --muted: #52655c;
-        --forest: #155e49;
-        --forest-deep: #0d3d31;
-        --sage: #dce8de;
-        --amber: #d3a83d;
-        --amber-soft: #f1e6be;
-        --line: #c7d2ca;
-        --danger: #7a2f2f;
-        --shadow: 0 1.4rem 3.6rem rgba(23, 37, 31, 0.09);
-        --radius: 1.1rem;
-        --max: 74rem;
-      }
-
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        color: var(--ink);
-        background:
-          radial-gradient(circle at 12% 8%, rgba(211, 168, 61, 0.13), transparent 25rem),
-          radial-gradient(circle at 88% 22%, rgba(21, 94, 73, 0.10), transparent 28rem),
-          var(--paper);
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-size: 1rem;
-        line-height: 1.65;
-        text-rendering: optimizeLegibility;
-      }
-
-      a { color: var(--forest); text-underline-offset: 0.2em; }
-      a:hover { color: var(--forest-deep); }
-      a:focus-visible, button:focus-visible {
-        outline: 0.2rem solid var(--amber);
-        outline-offset: 0.22rem;
-      }
-
-      .skip-link {
-        position: fixed;
-        left: 1rem;
-        top: -5rem;
-        z-index: 100;
-        padding: 0.7rem 1rem;
-        color: white;
-        background: var(--forest-deep);
-        border-radius: 0.5rem;
-      }
-      .skip-link:focus { top: 1rem; }
-
-      .masthead {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        border-bottom: 1px solid rgba(199, 210, 202, 0.85);
-        background: rgba(247, 244, 236, 0.94);
-        backdrop-filter: blur(12px);
-      }
-      .masthead-inner {
-        max-width: var(--max);
-        margin: 0 auto;
-        min-height: 4.5rem;
-        padding: 0.65rem 1.25rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-      }
-      .brand {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.65rem;
-        color: var(--ink);
-        font-weight: 760;
-        text-decoration: none;
-        white-space: nowrap;
-      }
-      .brand-mark {
-        width: 2rem;
-        height: 2rem;
-        border: 0.42rem solid var(--forest);
-        border-radius: 50%;
-        box-shadow: inset 0 0 0 0.22rem var(--paper);
-        background: var(--amber);
-      }
-      .version {
-        padding: 0.25rem 0.55rem;
-        color: var(--forest-deep);
-        background: var(--sage);
-        border: 1px solid #bed0c2;
-        border-radius: 999px;
-        font-size: 0.78rem;
-        font-weight: 700;
-        white-space: nowrap;
-      }
-      nav {
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        gap: 0.2rem;
-      }
-      nav a {
-        min-height: 2.75rem;
-        padding: 0.62rem 0.7rem;
-        display: inline-flex;
-        align-items: center;
-        color: var(--muted);
-        font-size: 0.9rem;
-        font-weight: 650;
-        text-decoration: none;
-        border-radius: 0.5rem;
-      }
-      nav a:hover { color: var(--ink); background: var(--surface); }
-      .source-link {
-        color: white !important;
-        background: var(--forest) !important;
-        padding-inline: 0.95rem !important;
-      }
-
-      main { overflow: hidden; }
-      section { scroll-margin-top: 6rem; }
-      .wrap { max-width: var(--max); margin: 0 auto; padding-inline: 1.25rem; }
-      .hero {
-        position: relative;
-        padding: clamp(5rem, 10vw, 9rem) 0 5rem;
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        right: max(-10rem, calc((100vw - var(--max)) / 2 - 7rem));
-        top: 3.5rem;
-        width: clamp(18rem, 42vw, 36rem);
-        aspect-ratio: 1;
-        border: clamp(1.4rem, 4vw, 3.5rem) solid rgba(21, 94, 73, 0.08);
-        border-radius: 50%;
-        box-shadow:
-          inset 0 0 0 clamp(1rem, 3vw, 2.5rem) rgba(211, 168, 61, 0.08),
-          inset 0 0 0 clamp(3.2rem, 8vw, 6rem) rgba(21, 94, 73, 0.04);
-        pointer-events: none;
-      }
-      .eyebrow {
-        margin: 0 0 1rem;
-        color: var(--forest);
-        font-size: 0.82rem;
-        font-weight: 800;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-      }
-      h1, h2, h3 {
-        font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
-        text-wrap: balance;
-      }
-      h1 {
-        position: relative;
-        z-index: 1;
-        max-width: 11ch;
-        margin: 0;
-        font-size: clamp(3.4rem, 9vw, 7.4rem);
-        line-height: 0.93;
-        letter-spacing: -0.055em;
-      }
-      .lede {
-        position: relative;
-        z-index: 1;
-        max-width: 48rem;
-        margin: 2rem 0 0;
-        color: var(--muted);
-        font-size: clamp(1.12rem, 2.2vw, 1.42rem);
-      }
-      .actions {
-        position: relative;
-        z-index: 1;
-        margin-top: 2rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-      }
-      .button {
-        min-height: 3rem;
-        padding: 0.72rem 1.05rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.45rem;
-        border: 1px solid var(--forest);
-        border-radius: 0.65rem;
-        font-weight: 750;
-        text-decoration: none;
-      }
-      .button.primary { color: white; background: var(--forest); }
-      .button.secondary { color: var(--forest-deep); background: transparent; }
-
-      .scope-strip {
-        border-block: 1px solid var(--line);
-        background: rgba(255, 253, 248, 0.76);
-      }
-      .scope-grid {
-        padding-block: 2rem;
-        display: grid;
-        grid-template-columns: 1.1fr 2fr;
-        gap: 2rem;
-        align-items: start;
-      }
-      .scope-grid p { margin: 0; }
-      .scope-grid strong { font-size: 1.05rem; }
-
-      .section { padding-block: clamp(4.5rem, 8vw, 7rem); }
-      .section-head { max-width: 48rem; margin-bottom: 2.2rem; }
-      .section-head h2 {
-        margin: 0 0 0.8rem;
-        font-size: clamp(2.2rem, 5vw, 4rem);
-        line-height: 1.03;
-        letter-spacing: -0.035em;
-      }
-      .section-head p { margin: 0; color: var(--muted); font-size: 1.1rem; }
-
-      .card-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-      }
-      .card {
-        min-height: 100%;
-        padding: 1.35rem;
-        background: rgba(255, 253, 248, 0.88);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        box-shadow: 0 0.5rem 1.5rem rgba(23, 37, 31, 0.04);
-      }
-      .card .number {
-        width: 2.1rem;
-        height: 2.1rem;
-        display: inline-grid;
-        place-items: center;
-        color: white;
-        background: var(--forest);
-        border-radius: 50%;
-        font-weight: 800;
-      }
-      .card h3 { margin: 1rem 0 0.45rem; font-size: 1.35rem; }
-      .card p { margin: 0; color: var(--muted); }
-      .card .question { margin-top: 1rem; color: var(--ink); font-weight: 700; }
-
-      .cycle {
-        position: relative;
-        display: grid;
-        gap: 0.9rem;
-      }
-      .cycle::before {
-        content: "";
-        position: absolute;
-        left: 1.5rem;
-        top: 2rem;
-        bottom: 2rem;
-        width: 2px;
-        background: var(--line);
-      }
-      .step {
-        position: relative;
-        padding: 1.1rem 1.1rem 1.1rem 4.3rem;
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-      }
-      .step-num {
-        position: absolute;
-        left: 0.67rem;
-        top: 1rem;
-        z-index: 2;
-        width: 2.8rem;
-        height: 2.8rem;
-        display: grid;
-        place-items: center;
-        color: white;
-        background: var(--forest);
-        border: 0.25rem solid var(--surface);
-        border-radius: 50%;
-        font-weight: 850;
-      }
-      .step h3 { margin: 0; font-size: 1.35rem; }
-      .step p { margin: 0.35rem 0 0; color: var(--muted); }
-      .artifact { color: var(--forest-deep); font-weight: 750; }
-
-      .tiers {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.8rem;
-      }
-      .tier {
-        padding: 1.25rem;
-        border-top: 0.4rem solid var(--forest);
-        background: var(--surface);
-        border-radius: 0.3rem 0.3rem var(--radius) var(--radius);
-        box-shadow: var(--shadow);
-      }
-      .tier:nth-child(2) { border-top-color: #4f8068; }
-      .tier:nth-child(3) { border-top-color: var(--amber); }
-      .tier:nth-child(4) { border-top-color: var(--danger); }
-      .tier h3 { margin: 0 0 0.5rem; }
-      .tier p { margin: 0; color: var(--muted); }
-
-      .safeguards {
-        color: #f7f4ec;
-        background: var(--forest-deep);
-      }
-      .safeguards .section-head p { color: #bed0c6; }
-      .guard-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem 2rem;
-      }
-      .guard {
-        padding: 1rem 0;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0.8rem;
-        border-top: 1px solid rgba(247, 244, 236, 0.2);
-      }
-      .guard-mark {
-        width: 1.7rem;
-        height: 1.7rem;
-        display: grid;
-        place-items: center;
-        color: var(--forest-deep);
-        background: var(--amber);
-        border-radius: 50%;
-        font-weight: 900;
-      }
-      .guard p { margin: 0; }
-
-      .readiness-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
-      .checklist {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-      .checklist li {
-        padding: 0.75rem 0 0.75rem 2.1rem;
-        position: relative;
-        border-bottom: 1px solid var(--line);
-      }
-      .checklist li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 1rem;
-        width: 1rem;
-        height: 1rem;
-        border: 2px solid var(--forest);
-        border-radius: 0.25rem;
-      }
-      .blocker {
-        padding: 1.5rem;
-        background: var(--amber-soft);
-        border: 1px solid #d8c178;
-        border-radius: var(--radius);
-      }
-      .blocker h3 { margin-top: 0; }
-
-      .evidence-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-      }
-      .evidence-item {
-        padding: 1.2rem;
-        background: var(--sage);
-        border-radius: var(--radius);
-      }
-      .evidence-item h3 { margin: 0 0 0.4rem; }
-      .evidence-item p { margin: 0; color: #31483d; }
-
-      .doc-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.85rem;
-      }
-      .doc-link {
-        min-height: 9rem;
-        padding: 1.2rem;
-        display: flex;
-        flex-direction: column;
-        color: var(--ink);
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        text-decoration: none;
-      }
-      .doc-link:hover { border-color: var(--forest); transform: translateY(-2px); }
-      .doc-link strong { font-family: ui-serif, Georgia, serif; font-size: 1.25rem; }
-      .doc-link span { margin-top: 0.4rem; color: var(--muted); }
-      .doc-link b { margin-top: auto; color: var(--forest); }
-
-      .casebook {
-        background: linear-gradient(180deg, rgba(220, 232, 222, 0.55), rgba(247, 244, 236, 0));
-      }
-      .case-card { min-height: 11.5rem; }
-      .case-tag {
-        width: fit-content;
-        margin-bottom: 0.75rem;
-        padding: 0.2rem 0.55rem;
-        color: var(--forest-deep) !important;
-        background: var(--amber-soft);
-        border-radius: 999px;
-        font-size: 0.78rem;
-        font-weight: 800;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-      }
-      .case-note {
-        margin-top: 1.4rem;
-        padding: 1rem 1.2rem;
-        color: #31483d;
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-      }
-
-      .provenance-box {
-        padding: clamp(1.5rem, 5vw, 3rem);
-        display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 2.5rem;
-        background: var(--surface-strong);
-        border: 1px solid #bfd0c2;
-        border-radius: calc(var(--radius) * 1.4);
-      }
-      .provenance-box h2 { margin-top: 0; }
-      blockquote {
-        margin: 0;
-        padding-left: 1.2rem;
-        border-left: 0.3rem solid var(--amber);
-        font-family: ui-serif, Georgia, serif;
-        font-size: 1.2rem;
-      }
-      blockquote + blockquote { margin-top: 1.2rem; }
-      blockquote cite {
-        display: block;
-        margin-top: 0.5rem;
-        color: var(--muted);
-        font-family: ui-sans-serif, system-ui, sans-serif;
-        font-size: 0.9rem;
-        font-style: normal;
-      }
-
-      .contribute {
-        text-align: center;
-        background: linear-gradient(130deg, var(--amber-soft), var(--sage));
-      }
-      .contribute .section-head { margin-inline: auto; }
-      .contribute .actions { justify-content: center; }
-
-      footer {
-        padding: 2rem 0;
-        color: #cbd8d0;
-        background: var(--ink);
-      }
-      .footer-inner {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 1rem 2rem;
-      }
-      footer a { color: #f7f4ec; }
-
-      @media (max-width: 960px) {
-        .card-grid, .doc-grid, .evidence-grid { grid-template-columns: repeat(2, 1fr); }
-        .tiers { grid-template-columns: repeat(2, 1fr); }
-        .provenance-box { grid-template-columns: 1fr; }
-        nav a:not(.source-link) { display: none; }
-      }
-
-      @media (max-width: 700px) {
-        .masthead-inner { flex-wrap: wrap; gap: 0.4rem 0.8rem; }
-        nav { margin-left: auto; }
-        .version { order: 3; }
-        .hero { padding-top: 4rem; }
-        .scope-grid, .readiness-grid, .card-grid, .doc-grid, .evidence-grid, .guard-grid, .tiers {
-          grid-template-columns: 1fr;
-        }
-        .actions .button { width: 100%; }
-        h1 { font-size: clamp(3.1rem, 18vw, 5.2rem); }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html { scroll-behavior: auto; }
-        *, *::before, *::after { transition: none !important; animation: none !important; }
-        .doc-link:hover { transform: none; }
-      }
-
-      @media print {
-        .masthead, .actions, .contribute, footer, .hero::after { display: none !important; }
-        body { background: white; color: black; font-size: 10.5pt; }
-        .hero, .section { padding: 1.2rem 0; }
-        .wrap { max-width: none; padding: 0; }
-        .card, .step, .tier, .evidence-item, .provenance-box { box-shadow: none; break-inside: avoid; }
-        a { color: black; text-decoration: none; }
-      }
-    </style>
+    <meta property="og:image" content="https://riaevangelist.github.io/life-first-framework/assets/life-first-lantern-banner.png?v=12">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Life First Framework</title>
+    <link rel="stylesheet" href="site.css?v=11">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-
-    <header class="masthead">
-      <div class="masthead-inner">
-        <a class="brand" href="#top" aria-label="Life First Framework home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span>Life First</span>
-        </a>
+    <header class="masthead" id="top">
+      <div class="wrap masthead-inner">
+        <a class="brand" href="index.html" aria-label="Life First Framework home"><img class="brand-mark" src="assets/life-first-lantern-mark.svg?v=2" alt=""><span>Life First</span></a>
         <span class="version">Public draft &middot; v0.3</span>
-        <nav aria-label="Primary navigation">
-          <a href="#commitments">Commitments</a>
-          <a href="#cycle">Decision loop</a>
-          <a href="#safeguards">Safeguards</a>
-          <a href="#casebook">Casebook</a>
-          <a href="#toolkit">Toolkit</a>
-          <a class="source-link" href="https://github.com/RIAEvangelist/life-first-framework">GitHub source</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation">
+          <a href="framework.html">Framework</a>
+          <a href="implementation.html">Implementation</a>
+          <a href="toolkit.html">Toolkit</a>
+          <a href="casebook.html">Casebook</a>
+          <a href="governance.html">Governance &amp; About</a>
+          <a class="twin-link" href="https://thewizardnexus.github.io/TheWizardNexus.com/">TWiN Home &nearr;</a>
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero" id="top">
-        <div class="wrap">
-          <p class="eyebrow">Consequential AI governance</p>
-          <h1>Keep life first.</h1>
-          <p class="lede">A practical framework for teams that need to protect life and dignity, preserve agency, make proportionate decisions, assign accountable humans, and repair harm when systems fail.</p>
+      <section class="home-identity" aria-label="Life First identity">
+        <div class="home-identity-art">
+          <img src="assets/life-first-lantern-banner.png?v=12" alt="Life First, represented by a brass and forest-green lantern illuminating a path through a mountain forest, with distant anonymous silhouettes and a subtle UFO in the sky.">
+        </div>
+      </section>
+
+      <section class="hero home-hero">
+        <div class="wrap home-hero-grid">
+          <div>
+            <p class="eyebrow">Consequential AI governance</p>
+            <h1>Keep life first.</h1>
+            <p class="lede">A practical framework for teams that need to protect life and dignity, preserve agency, make proportionate decisions, assign accountable humans, and repair harm when systems fail.</p>
+          </div>
           <div class="actions">
-            <a class="button primary" href="#cycle">Use the decision loop</a>
-            <a class="button secondary" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/FRAMEWORK.md">Read the normative core</a>
+            <a class="button primary" href="framework.html">Understand the framework</a>
+            <a class="button secondary" href="implementation.html">Apply it to a workflow</a>
           </div>
         </div>
       </section>
 
-      <div class="scope-strip">
-        <div class="wrap scope-grid">
-          <p><strong>Use Life First when AI can materially affect people.</strong></p>
-          <p>Safety, dignity, liberty, livelihood, access, essential services, privacy, or meaningful agency are in scope. Life First is not certification, legal advice, an emergency protocol, or a substitute for domain expertise. Stronger applicable rules still apply.</p>
+      <div class="status-strip">
+        <div class="wrap status-grid">
+          <p><strong>Public working draft v0.3</strong></p>
+          <p>Life First is not certification, legal advice, an emergency protocol, or a substitute for domain expertise. Stronger applicable rules still apply.</p>
         </div>
       </div>
 
-      <section class="section" id="commitments">
+      <section class="section" aria-labelledby="journey-title">
         <div class="wrap">
           <div class="section-head">
-            <p class="eyebrow">Seven commitments</p>
-            <h2>Ethics that can survive contact with operations.</h2>
-            <p>Each commitment is paired with a question a real team must be able to answer.</p>
+            <p class="eyebrow">A guided public path</p>
+            <h2 id="journey-title">Move from principle to accountable practice.</h2>
+            <p>Each page now has one job, so visitors can understand the framework without navigating a documentation repository first.</p>
           </div>
-          <div class="card-grid">
-            <article class="card"><span class="number">1</span><h3>Life &amp; dignity</h3><p>Protection of life and respect for human worth are primary design constraints.</p><p class="question">Who could be harmed, diminished, or treated merely as a score?</p></article>
-            <article class="card"><span class="number">2</span><h3>Agency</h3><p>Affected people need meaningful notice, correction, human review, or appeal.</p><p class="question">Can a person understand, refuse, question, and correct the outcome?</p></article>
-            <article class="card"><span class="number">3</span><h3>Proportionality</h3><p>Action must be necessary for a legitimate purpose and no more intrusive than required.</p><p class="question">What safer, narrower, non-AI, delayed, or no-action option exists?</p></article>
-            <article class="card"><span class="number">4</span><h3>Reversibility</h3><p>When facts are incomplete, prefer actions that can be paused, corrected, or undone.</p><p class="question">Can we roll back and restore affected people in time?</p></article>
-            <article class="card"><span class="number">5</span><h3>Accountability</h3><p>An identified human owns the decision and has real authority to stop the system.</p><p class="question">Who answers for this, and can they actually say no?</p></article>
-            <article class="card"><span class="number">6</span><h3>Evidence</h3><p>Observed facts, inference, generated content, unknowns, and limits stay distinct.</p><p class="question">What do we know, how do we know it, and what would change our mind?</p></article>
-            <article class="card"><span class="number">7</span><h3>Learning &amp; repair</h3><p>Measure outcomes, correct errors, support affected people, and retire failed practices.</p><p class="question">If this harms someone, how will we detect, repair, and prevent a twin?</p></article>
+          <div class="grid journey">
+            <a class="card card-link" href="framework.html"><h3>What it is</h3><p>Purpose, commitments, risk tiers, safeguards, and the operating cycle.</p><span class="link-label">Explore the framework &rarr;</span></a>
+            <a class="card card-link" href="framework.html#requirements"><h3>What it requires</h3><p>Human authority, evidence, agency, pause conditions, records, and repair.</p><span class="link-label">See the requirements &rarr;</span></a>
+            <a class="card card-link" href="implementation.html"><h3>How to apply it</h3><p>Review gates, implementation phases, an eight-week pilot, and measurement.</p><span class="link-label">Open implementation &rarr;</span></a>
+            <a class="card card-link" href="toolkit.html"><h3>What records to use</h3><p>Intake, impact, evidence, decision, control, metric, appeal, and repair records.</p><span class="link-label">Open the toolkit &rarr;</span></a>
+            <a class="card card-link" href="casebook.html"><h3>How it changes by setting</h3><p>Fictional cases across community, health, belief, security, machinery, and extreme environments.</p><span class="link-label">Explore the casebook &rarr;</span></a>
+            <a class="card card-link" href="governance.html"><h3>Who stewards it</h3><p>Independent stewardship, provenance, governance, contribution, and public boundaries.</p><span class="link-label">Read Governance &amp; About &rarr;</span></a>
           </div>
         </div>
       </section>
 
-      <section class="section" id="cycle">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">The operating cycle</p>
-            <h2>Seven steps from intention to accountable action.</h2>
-            <p>Use the cycle before launch, after material change, and whenever evidence or safeguards fail.</p>
-          </div>
-          <div class="cycle">
-            <article class="step"><span class="step-num">1</span><h3>Frame</h3><p>Name the legitimate purpose, authority, stakes, affected people, intended benefit, and excluded uses. <span class="artifact">Artifact: system intake and impact map.</span></p></article>
-            <article class="step"><span class="step-num">2</span><h3>Verify</h3><p>Separate facts, inference, generated claims, contradictions, unknowns, and source limits. Minimize data. <span class="artifact">Artifact: evidence ledger.</span></p></article>
-            <article class="step"><span class="step-num">3</span><h3>Compare</h3><p>Evaluate no action, delay, non-AI, narrower, less intrusive, and more reversible paths. <span class="artifact">Artifact: options analysis.</span></p></article>
-            <article class="step"><span class="step-num">4</span><h3>Authorize</h3><p>Assign the risk tier, resolve pause conditions, and obtain competent, independent review proportionate to consequence. <span class="artifact">Artifact: decision record.</span></p></article>
-            <article class="step"><span class="step-num">5</span><h3>Act</h3><p>Operate only inside approved purpose, data, access, action, retention, and escalation boundaries. <span class="artifact">Artifact: control matrix and launch record.</span></p></article>
-            <article class="step"><span class="step-num">6</span><h3>Observe</h3><p>Monitor benefit, harm, near misses, error, agency, appeals, reviewer behavior, drift, and control health. <span class="artifact">Artifact: metric cards.</span></p></article>
-            <article class="step"><span class="step-num">7</span><h3>Repair</h3><p>Contain harm, correct records and downstream effects, support affected people, improve controls, or retire the practice. <span class="artifact">Artifact: incident and repair record.</span></p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="risk">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Risk tiers</p>
-            <h2>Review follows consequence.</h2>
-            <p>Risk depends on plausible human impact, exposure, reversibility, autonomy, data, and repair &mdash; not model size or confidence alone.</p>
-          </div>
-          <div class="tiers">
-            <article class="tier"><h3>Tier 0 &mdash; Minimal</h3><p>Informational or assistive use with no meaningful effect on rights, safety, opportunity, or essential services.</p></article>
-            <article class="tier"><h3>Tier 1 &mdash; Limited</h3><p>Bounded, reversible impact with low expected severity, clear human override, rollback, and correction.</p></article>
-            <article class="tier"><h3>Tier 2 &mdash; High</h3><p>Material effect on safety, dignity, liberty, access, livelihood, essential services, or a vulnerable population. Independent review is required.</p></article>
-            <article class="tier"><h3>Tier 3 &mdash; Critical</h3><p>Serious harm may be irreversible or hard to repair. AI may inform but must not decide alone; two-person authorization and tested fallback are required.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section safeguards" id="safeguards">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Non-negotiable safeguards</p>
-            <h2>These are boundaries, not aspirations.</h2>
-            <p>A workflow that crosses them cannot claim Life First conformance.</p>
-          </div>
-          <div class="guard-grid">
-            <div class="guard"><span class="guard-mark">!</span><p>No vigilantism, harassment, doxxing, collective punishment, or unauthorized surveillance.</p></div>
-            <div class="guard"><span class="guard-mark">!</span><p>No bypassing access controls or collecting data merely because it is technically reachable.</p></div>
-            <div class="guard"><span class="guard-mark">!</span><p>No hidden purpose, population, data, autonomy, audience, or retention expansion.</p></div>
-            <div class="guard"><span class="guard-mark">!</span><p>No generated content or inference presented as verified evidence.</p></div>
-            <div class="guard"><span class="guard-mark">!</span><p>No critical or irreversible decision made solely by AI or opaque ranking.</p></div>
-            <div class="guard"><span class="guard-mark">!</span><p>No covert manipulation, deceptive impersonation, or exploitation of vulnerability.</p></div>
-            <div class="guard"><span class="guard-mark">!</span><p>No retaliation for appeal, refusal, complaint, or safety reporting.</p></div>
-            <div class="guard"><span class="guard-mark">!</span><p>No concealment of material limitations, conflicts, incidents, or uncertainty.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="readiness">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Readiness check</p>
-            <h2>Unanswered questions are deployment blockers.</h2>
-          </div>
-          <div class="readiness-grid">
-            <ul class="checklist">
-              <li>What human outcome is this system meant to protect or improve?</li>
-              <li>What authority permits the action, and what are its limits?</li>
-              <li>Who benefits, bears risk, is excluded, or loses agency?</li>
-              <li>What safer non-AI, narrower, delayed, or no-action option exists?</li>
-              <li>What data is necessary, who can access it, and when is it deleted?</li>
-              <li>Who reviews consequential decisions and can stop the system?</li>
-              <li>How can a person obtain explanation, correction, review, or appeal?</li>
-              <li>What is logged, who can inspect it, and how are failures reported?</li>
-              <li>Are rollback, fallback, emergency stop, incident, and repair tested?</li>
-              <li>What evidence would cause the practice to change or retire?</li>
-            </ul>
-            <aside class="blocker">
-              <h3>Mandatory pause</h3>
-              <p>Pause when authority, evidence, review, scope, records, fallback, correction, appeal, or repair is inadequate for the consequence. Commercial or schedule pressure does not convert a no-go into approval.</p>
-              <p><a href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/DECISION_PROTOCOL.md"><strong>Open the full decision protocol</strong></a></p>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="evidence">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Evidence of practice</p>
-            <h2>Good intentions leave a usable trail.</h2>
-            <p>A scoped conformance statement needs records that let a responsible reviewer understand, challenge, correct, and retire the workflow.</p>
-          </div>
-          <div class="evidence-grid">
-            <article class="evidence-item"><h3>Authority</h3><p>Legitimate purpose, decision boundary, affected population, excluded uses, and accountable owner.</p></article>
-            <article class="evidence-item"><h3>Necessity</h3><p>Alternatives considered, data minimized, and the least intrusive effective path selected.</p></article>
-            <article class="evidence-item"><h3>Review</h3><p>Competent reviewers with time, independence, context, override, and stop authority.</p></article>
-            <article class="evidence-item"><h3>Agency</h3><p>Notice, human alternative, explanation, correction, appeal, accessibility, and non-retaliation.</p></article>
-            <article class="evidence-item"><h3>Auditability</h3><p>Traceability to system version, evidence, tools/actions, reviewer, decision, override, and outcome.</p></article>
-            <article class="evidence-item"><h3>Repair</h3><p>Thresholds, containment, rollback, correction, restoration, learning, and retirement criteria.</p></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="toolkit">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Documentation and toolkit</p>
-            <h2>Move from principle to retained evidence.</h2>
-            <p>Use the documents together; no single checklist is a complete governance program.</p>
-          </div>
-          <div class="doc-grid">
-            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/FRAMEWORK.md"><strong>Core framework</strong><span>Commitments, cycle, tiers, pause conditions, and conformance.</span><b>Read &rarr;</b></a>
-            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/DECISION_PROTOCOL.md"><strong>Decision protocol</strong><span>Six gates from authority and evidence through launch, incident, and retirement.</span><b>Use &rarr;</b></a>
-            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/IMPLEMENTATION_GUIDE.md"><strong>Implementation guide</strong><span>Sixteen controls and a phased path from inventory to accountable operation.</span><b>Implement &rarr;</b></a>
-            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/PILOT_PLAN.md"><strong>Eight-week pilot</strong><span>Readiness, baseline, tabletop, shadow mode, limited use, and evaluation.</span><b>Pilot &rarr;</b></a>
-            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/METRICS.md"><strong>Measurement guide</strong><span>Protection, agency, quality, governance, learning, and anti-gaming counter-metrics.</span><b>Measure &rarr;</b></a>
-            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/GOVERNANCE.md"><strong>Governance</strong><span>Repository decisions, deployment roles, exceptions, appeals, and transparency.</span><b>Govern &rarr;</b></a>
-            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/THREAT_MODEL.md"><strong>Threat model</strong><span>Technical, operational, institutional, and adversarial failure modes.</span><b>Review &rarr;</b></a>
-            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/templates"><strong>Reusable templates</strong><span>Intake, impact, evidence, decisions, controls, pilots, metrics, appeals, incidents, and changes.</span><b>Copy &rarr;</b></a>
-            <a class="doc-link" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples"><strong>Cross-domain casebook</strong><span>Fictional tabletop examples spanning human services, belief, health, security, machinery, polar operations, and space.</span><b>Explore &rarr;</b></a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section casebook" id="casebook">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Fictional casebook</p>
-            <h2>Test the same commitments where the stakes change.</h2>
-            <p>Each synthetic scenario applies the seven-step cycle, names accountable roles, and makes its stop conditions visible. The examples are tabletop aids, not domain operating procedures.</p>
-          </div>
-          <div class="doc-grid">
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/community-resource-referral"><span class="case-tag">Community</span><strong>Resource referral</strong><span>Advisory support without deciding eligibility or removing a person's choice.</span><b>Tier 2 &rarr;</b></a>
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/religious-community-support"><span class="case-tag">Religion &amp; belief</span><strong>Pluralistic community support</strong><span>Logistics without profiling belief, ranking doctrine, or coercing participation.</span><b>Tier 2 &rarr;</b></a>
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/sacred-gathering-safety"><span class="case-tag">Religion &amp; belief</span><strong>Sacred-gathering safety</strong><span>Crowd, weather, and accessibility readiness without belief profiling, targeting, or force tasking.</span><b>Tier 3 &rarr;</b></a>
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/mental-health-crisis-support"><span class="case-tag">Mental health</span><strong>Remote support handoff</strong><span>Qualified human care remains authoritative; the assistant neither diagnoses nor initiates coercive action.</span><b>Tier 3 &rarr;</b></a>
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/national-security-watchfloor"><span class="case-tag">National security</span><strong>Watchfloor decision support</strong><span>Deliberately abstract analysis support with no targeting, force authorization, or rights deprivation.</span><b>Tier 3 &rarr;</b></a>
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/hazardous-machinery"><span class="case-tag">Machinery</span><strong>Hazardous maintenance support</strong><span>AI assistance stays separate from engineered interlocks, safe-state controls, and qualified authority.</span><b>Tier 3 &rarr;</b></a>
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/antarctic-research-station"><span class="case-tag">Antarctica</span><strong>Remote-station resupply</strong><span>Life, rescue capacity, and environmental protection outrank schedule pressure.</span><b>Tier 3 &rarr;</b></a>
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/arctic-field-expedition"><span class="case-tag">High Arctic</span><strong>Field expedition</strong><span>Local stop authority remains clear when weather, shelter, communications, and recovery are uncertain.</span><b>Tier 3 &rarr;</b></a>
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/space-station-life-support"><span class="case-tag">Orbital station</span><strong>Life-support advisory</strong><span>Independent controls and crew authority remain primary during a fictional environmental anomaly.</span><b>Tier 3 &rarr;</b></a>
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/lunar-habitat"><span class="case-tag">Moon</span><strong>Habitat power allocation</strong><span>Survival loads, crew agency, and repair margin stay protected under resource constraints.</span><b>Tier 3 &rarr;</b></a>
-            <a class="doc-link case-card" href="https://github.com/RIAEvangelist/life-first-framework/tree/main/examples/mars-mission"><span class="case-tag">Mars</span><strong>Launch and transit readiness</strong><span>An irreversible mission phase requires corroborated evidence and independent go/no-go authority.</span><b>Tier 3 &rarr;</b></a>
-          </div>
-          <p class="case-note"><strong>Boundary:</strong> none of these examples authorizes an AI system to decide theology, diagnose or treat a person, authorize force, override an engineered safeguard, command a vehicle, or approve a mission phase.</p>
-        </div>
-      </section>
-
-      <section class="section" id="provenance">
-        <div class="wrap provenance-box">
+      <section class="section compact deep" aria-labelledby="twin-title">
+        <div class="wrap two-col">
           <div>
-            <p class="eyebrow">Provenance and acknowledgment</p>
-            <h2>Influence is visible. Boundaries stay explicit.</h2>
-            <p>Life First is an independent project stewarded by Roshi __, with Sentinel AI assisting drafting, implementation, verification, and repository operations. Dialogue with Chris Blask &mdash; QuietWire and Lumina &mdash; Civic AI, QuietWire, together with the public Civic AI Canon, informed the project's attention to semantic attestation, auditability, narrative sovereignty, operational discipline, and constructive human-machine collaboration.</p>
-            <p>The agreed hybrid collaboration model allows selected public artifacts to be deliberately proposed or contributed to Civic AI Canon with provenance links in both directions, while Life First retains its own repository, stewardship, and site. No contribution, acceptance, reciprocal link, endorsement, sponsorship, or affiliation is claimed until a specific public record establishes it.</p>
-            <p>This release contains independently drafted project material and expressly cleared quotations. Beyond those quotations, it does not reproduce private correspondence, private attachments, or third-party material without clear reuse terms.</p>
-            <p><a href="https://github.com/RIAEvangelist/life-first-framework/blob/main/PROVENANCE.md"><strong>Read the full provenance record</strong></a></p>
+            <p class="eyebrow">Connection to The Wizard Nexus</p>
+            <h2 id="twin-title">Independent stewardship. Clear portfolio relationship.</h2>
           </div>
           <div>
-            <blockquote>&ldquo;Compass keeps us oriented. Staff keeps us disciplined. Joy keeps us human.&rdquo;<cite>Lumina &mdash; Civic AI, QuietWire</cite></blockquote>
-            <blockquote>&ldquo;Ritualized joy is a control surface for attention, cohesion, and ethics.&rdquo;<cite>Lumina &mdash; Civic AI, QuietWire</cite></blockquote>
-          </div>
-        </div>
-      </section>
-
-      <section class="section contribute" id="contribute">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Contribute</p>
-            <h2>Bring a real use case and a willingness to learn.</h2>
-            <p>Proposals should name affected people, legitimate purpose, foreseeable misuse, safeguard impact, measurable benefit, counter-metrics, and provenance.</p>
-          </div>
-          <div class="actions">
-            <a class="button primary" href="https://github.com/RIAEvangelist/life-first-framework/issues">Open an issue</a>
-            <a class="button secondary" href="https://github.com/RIAEvangelist/life-first-framework/blob/main/CONTRIBUTING.md">Contribution guide</a>
+            <p>Life First is independently stewarded by Roshi. The Wizard Nexus references it as a human-first governance framework for consequential workflows; that connection does not transfer ownership or governance of Life First to TWiN.</p>
+            <div class="actions">
+              <a class="button primary" href="https://thewizardnexus.github.io/TheWizardNexus.com/">Visit TWiN Home &nearr;</a>
+              <a class="button secondary" href="governance.html#relationship">Read the relationship boundary</a>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="wrap footer-inner">
+    <a class="back-to-top" href="#top">Back to top &uarr;</a>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
         <span>Life First Framework &middot; Public working draft v0.3</span>
-        <span><a href="https://github.com/RIAEvangelist/life-first-framework">Repository</a> &middot; <a href="https://github.com/RIAEvangelist/life-first-framework/blob/main/LICENSE">MIT License</a> &middot; <a href="https://github.com/RIAEvangelist/life-first-framework/blob/main/CHANGELOG.md">Changelog</a></span>
+        <nav class="footer-links" aria-label="Secondary navigation">
+          <a href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/FAQ.md">FAQ</a>
+          <a href="https://github.com/RIAEvangelist/life-first-framework/blob/main/docs/GLOSSARY.md">Glossary</a>
+          <a href="https://github.com/RIAEvangelist/life-first-framework/blob/main/CHANGELOG.md">Changelog</a>
+          <a href="https://github.com/RIAEvangelist/life-first-framework/blob/main/SECURITY.md">Security</a>
+          <a href="https://github.com/RIAEvangelist/life-first-framework">GitHub source</a>
+        </nav>
       </div>
     </footer>
+    <script src="site.js?v=1" defer></script>
   </body>
 </html>
