@@ -59,9 +59,9 @@ h3 {
   line-height: 1.08;
 }
 
-h1 { font-size: clamp(3rem, 7vw, 5.8rem); }
-h2 { font-size: clamp(2rem, 4.3vw, 3.45rem); }
-h3 { font-size: 1.3rem; }
+h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h3 { font-size: 1.2rem; }
 
 p { margin: 0; }
 
@@ -212,7 +212,7 @@ img.brand-mark { background: none; }
 .hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(4rem, 8vw, 6.4rem) 0;
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -232,7 +232,7 @@ img.brand-mark { background: none; }
 .hero .wrap { position: relative; z-index: 1; }
 
 .home-hero {
-  padding-block: clamp(2.5rem, 5vw, 4rem);
+  padding-block: clamp(1.8rem, 3.5vw, 2.8rem);
   background: linear-gradient(105deg, rgba(231, 239, 232, 0.76), rgba(247, 244, 236, 0.94));
 }
 
@@ -245,12 +245,12 @@ img.brand-mark { background: none; }
   align-items: end;
 }
 
-.home-hero h1 { font-size: clamp(2.2rem, 4vw, 3.5rem); }
+.home-hero h1 { font-size: clamp(1.9rem, 3vw, 2.65rem); }
 
 .home-hero .lede {
   max-width: 46rem;
-  margin-top: 0.85rem;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  margin-top: 0.65rem;
+  font-size: clamp(0.98rem, 1.25vw, 1.1rem);
 }
 
 .home-hero .actions {
@@ -260,11 +260,11 @@ img.brand-mark { background: none; }
   align-items: stretch;
 }
 
-.hero-compact { padding-block: clamp(3.2rem, 6vw, 4.8rem); }
+.hero-compact { padding-block: clamp(2.1rem, 4vw, 3.2rem); }
 
-.toolkit-page .hero h1 { font-size: clamp(3rem, 6vw, 4.8rem); }
-.toolkit-page .section { padding: clamp(2.8rem, 5vw, 4.5rem) 0; }
-.toolkit-page .section-head h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); }
+.toolkit-page .hero h1 { font-size: clamp(2.4rem, 4.5vw, 3.6rem); }
+.toolkit-page .section { padding: clamp(2rem, 3.5vw, 3rem) 0; }
+.toolkit-page .section-head h2 { font-size: clamp(1.75rem, 2.8vw, 2.3rem); }
 
 .toolkit-guide {
   padding: 1.7rem 0;
@@ -334,9 +334,9 @@ img.brand-mark { background: none; }
 }
 
 .eyebrow {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.55rem;
   color: var(--forest);
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   font-weight: 850;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -344,9 +344,9 @@ img.brand-mark { background: none; }
 
 .lede {
   max-width: 49rem;
-  margin-top: 1.25rem;
+  margin-top: 0.9rem;
   color: var(--muted);
-  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 
 .actions {
@@ -387,8 +387,8 @@ img.brand-mark { background: none; }
   align-items: start;
 }
 
-.section { padding: clamp(3.3rem, 6vw, 5.5rem) 0; }
-.section.compact { padding: clamp(2.3rem, 4vw, 3.5rem) 0; }
+.section { padding: clamp(2rem, 4vw, 3.5rem) 0; }
+.section.compact { padding: clamp(1.6rem, 3vw, 2.5rem) 0; }
 .section + .section { border-top: 1px solid var(--line); }
 .section.tint { background: rgba(231, 239, 232, 0.72); }
 .section.deep { color: white; background: var(--forest-deep); }
@@ -398,13 +398,13 @@ img.brand-mark { background: none; }
 
 .section-head {
   max-width: 50rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 
 .section-head > p:last-child {
-  margin-top: 0.85rem;
+  margin-top: 0.65rem;
   color: var(--muted);
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
 
 .section.deep .section-head > p:last-child { color: #dce8de; }
@@ -760,7 +760,7 @@ img.brand-mark { background: none; }
 }
 
 .site-footer {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   color: #dce8de;
   background: #0a2f27;
 }
@@ -854,16 +854,16 @@ img.brand-mark { background: none; }
 
 @media (max-width: 620px) {
   .wrap { width: min(var(--max), calc(100% - 2rem)); }
-  h1 { font-size: clamp(3rem, 15vw, 4.25rem); }
-  h2 { font-size: clamp(2rem, 10vw, 2.8rem); }
+  h1 { font-size: clamp(2.15rem, 11vw, 3rem); }
+  h2 { font-size: clamp(1.65rem, 8vw, 2.25rem); }
   .home-identity img {
     width: 100%;
     height: auto;
     max-height: none;
   }
-  .hero { padding-block: 3.5rem; }
+  .hero { padding-block: 2.5rem; }
   .hero::after { right: 0.75rem; }
-  .home-hero { padding-block: 2.5rem; }
+  .home-hero { padding-block: 1.8rem; }
   .grid,
   .grid.two,
   .grid.four,
