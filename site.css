@@ -118,7 +118,7 @@ section[id] { scroll-margin-top: 6rem; }
   height: 2.7rem;
   flex: 0 0 auto;
   object-fit: contain;
-  background: url("assets/life-first-lantern-mark.svg?v=2") center / contain no-repeat;
+  background: url("assets/life-first-lantern-mark.png?v=3") center / contain no-repeat;
 }
 
 img.brand-mark { background: none; }
@@ -226,7 +226,7 @@ img.brand-mark { background: none; }
   right: clamp(1rem, 6vw, 5rem);
   top: 50%;
   transform: translateY(-50%);
-  background: url("assets/life-first-lantern-mark.svg?v=2") center / contain no-repeat;
+  background: url("assets/life-first-lantern-mark.png?v=3") center / contain no-repeat;
   opacity: 0.075;
   pointer-events: none;
 }
